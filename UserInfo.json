@@ -1,0 +1,30 @@
+{
+  "data": {
+    "BusinessName": null,
+    "CustomTypeName": "4",
+    "AgentName": "*明",
+    "Mobile": "18202613675",
+    "IDCardFront": null,
+    "IDCardBack": null,
+    "IDCardNum": "1****************4",
+    "AgentLPic": null,
+    "AgentLogo": "http://testjiaofei.bjjypay.com.cn/Image/logo/AgentLogo_bb32d662c7924dffb7b4ad01ae6fdcb5.jpg",
+    "LessNoPayPwd": 0,
+    "LessAccount": 0,
+    "AgentLevel": 6,
+    "Status": 1,
+    "RateID": "02cf809259d64b039e4b28fac4994fa4",
+    "AgentType": 1,
+    "DelTime": "2018-03-29 10:20:13",
+    "IDCardStatus": 1,
+    "ExistPwd": 1,
+    "CustomType": 1,
+    "SysAutomatic": 1,
+    "MerId": "873008000006255",
+    "_id": "31ac27456a46455d999a6249bdf54f7a",
+    "InsertDate": "2018-03-29 10:20:13"
+  },
+  "code": 0,
+  "msg": "操作成功",
+  "innerCode": 0
+}
