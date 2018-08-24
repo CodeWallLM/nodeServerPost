@@ -25,9 +25,9 @@ app.post('/getData', function (req, res) {
 	  res.end(data);
 	});
 });
-// 设置服务
+// 设置服务端口与域名
 var server = app.listen(8888,'127.0.0.1', function () {
 	  var host = server.address().address;
   	var port = server.address().port;
   	console.log("应用实例，访问地址为 http://%s:%s", host, port)
-})
+});
