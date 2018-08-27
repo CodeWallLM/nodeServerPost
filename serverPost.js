@@ -76,7 +76,7 @@ const readMarkDownFile = function () {
           htmlStr = marked(markContent.toString())  
           // 将html模板文件中的 '@markdown' 替换为html字符串 
           // console.log(htmlStr)
-          return marked(markContent.toString())
+          return htmlStr
       }  
     })
 }
