@@ -64,7 +64,7 @@ const getFiles = {
     }
 };
 // 获取用户信息
-app.post('/getData', function (req, res) {
+app.post('/getUserInfo', function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/json; charset=utf-8'});
     fs.readFile('UserInfo.json', function (err, retdata) {
       var data = {
