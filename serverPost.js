@@ -3,7 +3,6 @@ const express=require("express");
 const app=express();
 // 加载文件
 const fs=require("fs");
-const marked = require('marked');
 // 获取传进来的参数
 var bodyParser=require("body-parser");
 app.use(bodyParser.json());
@@ -64,34 +63,29 @@ const getFiles = {
 
     }
 };
-// 读取markdown
-const readMarkDownFile = function () {
-    console.log(1)
-    let htmlStr=1;
-    fs.readFile('./markdownFs/canvas.md', 'utf8', (err,markContent)=>{  
-      if(err){  
-          throw err  
-      }else{  
-          // 转化好的html字符串  
-          htmlStr = marked(markContent.toString())  
-          // 将html模板文件中的 '@markdown' 替换为html字符串 
-          // console.log(htmlStr)
-          return htmlStr
-      }  
-    })
-}
-console.log(readMarkDownFile())
 // 获取用户信息
 app.post('/getData', function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/json; charset=utf-8'});
-    fs.readFile('UserInfo.json', function (err, data) {
-    res.end(data);
+    fs.readFile('UserInfo.json', function (err, retdata) {
+      var data = {
+        code: 0,
+        data: JSON.parse(retdata),
+        msg: '请求成功'
+      }
+      res.end(JSON.stringify(data));
   });
 });
 // 获取所有文件名称
-app.post('/FilesList', function (req, res) {
+app.post('/MKFilesList', function (req, res) {
+  // console.log(res.req.body)
     res.writeHead(200, {'Content-Type': 'text/json; charset=utf-8'});
-    res.end(JSON.stringify(getFiles.getFileList("./markdownFs/")));
+    var data = {
+        code: 0,
+        data: getFiles.getFileList("./markdownFs/"),
+        msg: '请求成功'
+      }
+    res.end(JSON.stringify(data));
+    // res.end(JSON.stringify(getFiles.getFileList("./markdownFs/")));
 });
 
 // 设置服务端口与域名
