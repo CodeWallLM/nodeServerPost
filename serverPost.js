@@ -73,9 +73,9 @@ app.post('/getUserInfo', function (req, res) {
         msg: '请求成功'
       }
       res.end(JSON.stringify(data));
-  });
+    });
 });
-// 获取所有文件名称
+// 获取md名称
 app.post('/MKFilesList', function (req, res) {
   // console.log(res.req.body)
     res.writeHead(200, {'Content-Type': 'text/json; charset=utf-8'});
