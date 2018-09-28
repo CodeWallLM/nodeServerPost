@@ -64,7 +64,8 @@ const getFiles = {
     }
 };
 // 获取用户信息
-app.post('/getUserInfo', function (req, res) {
+app.get('/getUserInfo', function (req, res) {
+    // console.log(req.query)
     res.writeHead(200, {'Content-Type': 'text/json; charset=utf-8'});
     fs.readFile('UserInfo.json', function (err, retdata) {
       var data = {
@@ -77,7 +78,7 @@ app.post('/getUserInfo', function (req, res) {
 });
 // 获取md名称
 app.post('/MKFilesList', function (req, res) {
-  // console.log(res.req.body)
+    // console.log(req.body)
     res.writeHead(200, {'Content-Type': 'text/json; charset=utf-8'});
     var data = {
         code: 0,
@@ -85,7 +86,6 @@ app.post('/MKFilesList', function (req, res) {
         msg: '请求成功'
       }
     res.end(JSON.stringify(data));
-    // res.end(JSON.stringify(getFiles.getFileList("./markdownFs/")));
 });
 
 // 设置服务端口与域名
